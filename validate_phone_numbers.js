@@ -42,4 +42,17 @@ function isIdNumberTooLong(phoneNumber){
 }
 
 //Test code
-isIdNumberTooLong("29090300800995")
+//isIdNumberTooLong("29090300800995")
+
+function isCharacterPresent(phoneNumber) {
+  var numArr = Array.from(phoneNumber.toString()).map(Number);
+  for(var i=0; i < numArr.length; i++) {
+    if(isNaN(numArr[i])){
+      console.log('false');
+      return
+    }
+  }
+}
+
+//Test code
+isCharacterPresent('3849Ad849948z');
