@@ -1,12 +1,12 @@
 function validateNumber(phoneNumber) {
   var numArr = Array.from(phoneNumber.toString()).map(Number);
   for(var i=0; i < numArr.length; i++) {
-    if(typeof numArr[i] == "number"){
-      console.log('true');
-    }else{
+    if(isNaN(numArr[i])){
       console.log('false');
+    }else{
+      console.log('true');
     }
   }
 }
 //Test code
-validateNumber('23485885');
+validateNumber('2348bbb588a5');
