@@ -30,3 +30,16 @@ function isIdNumberTooShort(phoneNumber){
     console.log('false');
   }
 }
+
+//Test code
+//isIdNumberTooShort("2909030085")
+
+function isIdNumberTooLong(phoneNumber){
+  var numArr = Array.from(phoneNumber.toString()).map(Number);
+  if(numArr.length > 13){
+    console.log('false');
+  }
+}
+
+//Test code
+isIdNumberTooLong("29090300800995")
