@@ -21,5 +21,12 @@ function isIdNumberValid(phoneNumber){
 }
 
 //Test code
-isIdNumberValid("2001014800086")
-isIdNumberValid("2909035800085")
+// isIdNumberValid("2001014800086")
+// isIdNumberValid("2909035800085")
+
+function isIdNumberTooShort(phoneNumber){
+  var numArr = Array.from(phoneNumber.toString()).map(Number);
+  if(numArr.length < 13){
+    console.log('false');
+  }
+}
