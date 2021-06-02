@@ -49,10 +49,26 @@ function isCharacterPresent(phoneNumber) {
   for(var i=0; i < numArr.length; i++) {
     if(isNaN(numArr[i])){
       console.log('false');
-      return
     }
   }
 }
 
 //Test code
-isCharacterPresent('3849Ad849948z');
+//isCharacterPresent('3849Ad849948z');
+// validates from 1990 - 2021
+function isYearValid(phoneNumber) {
+  var numArr = phoneNumber.match(/(..?)/g).map(Number);
+  var increment = 0;
+  for(var i= 0; i <= 99; i++){
+    if(numArr[0] == i){
+      increment += 1;
+    }
+  
+  }
+  if(increment != 1){
+    console.log('false')
+  }else{
+    console.log('true')
+  }
+}
+isYearValid("03296963888995");
