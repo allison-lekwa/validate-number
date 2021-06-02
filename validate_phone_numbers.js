@@ -52,9 +52,10 @@ function isCharacterPresent(phoneNumber) {
     }
   }
 }
-
 //Test code
 //isCharacterPresent('3849Ad849948z');
+
+
 // validates from 1990 - 2021
 function isYearValid(phoneNumber) {
   var numArr = phoneNumber.match(/(..?)/g).map(Number);
@@ -71,4 +72,26 @@ function isYearValid(phoneNumber) {
     console.log('true')
   }
 }
-isYearValid("03296963888995");
+//Test code
+//isYearValid("0329696388895");
+
+//validates months
+function isMonthValid(phoneNumber){
+  var numArr = phoneNumber.match(/(..?)/g).map(Number);
+  var increment = 0;
+  for(var i= 1; i <= 12; i++){
+    if(numArr[1] == i){
+      increment += 1;
+    }
+  
+  }
+  if(increment != 1){
+    console.log('false')
+  }else{
+    console.log('true')
+  }
+
+}
+//Test code
+//isMonthValid("9321696388895")
+//isMonthValid("9302696388895")
