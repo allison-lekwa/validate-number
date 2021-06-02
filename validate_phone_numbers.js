@@ -139,4 +139,31 @@ function isGender(phoneNumber){
   }
 }
 //Test code
-isGender("9305313388895");
+//isGender("9305313388895");
+
+//returns true if born citizen and permanent resident
+function isCitizen(phoneNumber){
+  var numArr = phoneNumber.match(/(.?)/g).map(Number);
+  console.log(numArr)
+  if (numArr[10] == 0 || numArr[10] == 1){
+    console.log(true);
+  }else{
+    console.log(false)
+  }
+}
+//Test code
+isCitizen("9305313388898");
+
+
+//the luhnCheck algorithm
+function luhnCheck(phoneNumber){
+  let arr = (phoneNumber + '')
+    .split('')
+    .reverse()
+    .map(x => parseInt(x));
+  let lastDigit = arr.splice(0, 1)[0];
+  let sum = arr.reduce((number, value, i) => (i % 2 !== 0 ? number + value : number + ((value * 2) % 9) || 9), 0);
+  sum += lastDigit;
+  return sum % 10 === 0;
+}
+console.log(luhnCheck("9305313388898"));
