@@ -95,3 +95,48 @@ function isMonthValid(phoneNumber){
 //Test code
 //isMonthValid("9321696388895")
 //isMonthValid("9302696388895")
+
+//Assumed that there is no leap year
+function isDayValid(phoneNumber){
+  var numArr = phoneNumber.match(/(..?)/g).map(Number);
+  var increment = 0;
+  for(var i= 1; i <= 31; i++){
+    if(numArr[1] == 2){
+      if(numArr[2] == i && numArr[2] <= 28){
+        increment += 1;
+      }
+    }
+    else if(numArr[1] == 4 || numArr[1] == 6 || numArr[1] == 9 || numArr[1] == 11){
+      if(numArr[2] == i && numArr[2] <= 30){
+        increment += 1;
+      }
+    }else
+      if(numArr[2] == i){
+        increment += 1;
+      }
+  }
+  if(increment != 1){
+    console.log('false')
+  }else{
+    console.log('true')
+  }
+
+}
+//Test code
+//isDayValid("9305316388895")
+
+
+//Returns true if gender is female
+function isGender(phoneNumber){
+  var numArr = phoneNumber.match(/(..?)/g).map(Number);
+  var increment = 0;
+  for(var i = 0; i<= 99; i++){
+    if(numArr[3] == i && numArr[3] <= 49){
+      console.log(false)
+    }else if(numArr[3] == i && numArr[3] > 49){
+      console.log('true')
+    }
+  }
+}
+//Test code
+isGender("9305313388895");
